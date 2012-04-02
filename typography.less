@@ -1,0 +1,210 @@
+/*---------------------------------------------------
+    LESS Typography Boilerplate 0.5
+  ---------------------------------------------------
+    
+    A starter kit to good web typography with an easy
+    baseline grid.
+
+    Include this after your reset stylesheet.
+
+    Copyright (c) 2012 Joel Sutherland
+    MIT Licensed:
+    http://www.opensource.org/licenses/mit-license.php
+
+-----------------------------------------------------*/
+
+
+@baseline: 20px;
+
+@body_font_size: 14px;
+@body_color: #666;
+@body_font_family: helvetica,arial,sans-serif;
+
+@header_max_size: 30px;
+@header_color: #000;
+@header_font_weight: normal;
+@header_font_family: georgia,serif;
+
+@accent_color: orange;
+
+
+
+/* Standard Text */
+body, input, button, textarea {
+    font-size: @body_font_size;
+    line-height: @baseline;
+    font-family: @body_font_family;
+    color: @body_color;
+}
+
+/* Block Baselines */
+h1, h2, h3, h4, h5, h6,
+p, ul, ol, pre, blockquote,
+textarea, button {
+    margin-bottom: @baseline;
+}
+
+
+/* Headers */
+h1,h2,h3,h4,h5,h6 {
+    font-family: @header_font_family;
+    color: @header_color;
+    font-weight: @header_font_weight;
+}
+h1 {
+    font-size: @header_max_size;
+    line-height: @baseline*2;
+}
+h2 {
+    font-size: @baseline;
+}
+h3 {
+    font-size: @baseline*.8;
+    margin-bottom: @baseline/2;
+}
+h4 { 
+    font-size: @baseline*.8;
+    margin-bottom: @baseline/2;
+}
+h5 {
+    font-size: @body_font_size;
+    font-weight: bold;
+    margin-bottom: 0;
+}
+h6 {
+    font-size: @body_font_size;
+    font-weight: bold;
+    margin-bottom: 0;
+}
+
+
+
+/* Paragraph Elements */
+a:link {
+    color: @accent_color;
+    text-decoration: none;
+}
+a:active {
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+a:visited {
+    color: gray;
+}
+sup, sub {
+    font-size: 80%;
+    line-height: 0;
+}
+sup {
+    vertical-align: super;
+}
+sub {
+    vertical-align: sub;
+}
+code {
+    font-family: Consolas, "Courier New", Courier, mono;
+}
+strong {
+    font-weight: normal;
+    color: @header_color;
+}
+
+
+
+/* Block Elements */
+ul , ol{
+    margin-left: @baseline/2;
+    padding-left: @baseline;
+}
+blockquote {
+    display: block;
+    opacity: .95;
+    border-left: 4px solid;
+    border-left-color: @accent_color;
+    padding: 0 @baseline/2;
+    font-style: italic;
+    margin-left: @baseline/2;
+}
+    blockquote p:last-child {
+        margin-bottom: @baseline/2;
+    }
+pre {
+    font-family: Consolas, "Courier New", Courier, mono;
+    background: black;
+    font-size: @body_font_size - 2;
+    background: rgba(0,0,0,.9);
+    color: #eee;
+    padding: @baseline/2 @baseline;
+}
+
+
+
+/* Forms */
+form { 
+}
+    form p {
+        margin: 0;
+    }
+fieldset {
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+label {
+    display: block;
+    margin-bottom: 0;
+}
+    .checkbox input, .checkbox label {
+        display: inline;
+    }
+    .checkbox input {
+        vertical-align: baseline;
+    }
+input, textarea, select {
+    display: block;
+    margin: 4px 0 @baseline+4 0;
+}
+input[type=text], input[type=email], input[type=url], textarea {
+    width: @baseline*20;
+    border: 1px solid;
+    border-color: #ccc;
+    border-color: rgba(0,0,0,.2);
+    height: @baseline*1.5;
+    line-height: @baseline*1.5;
+    background: @content_background;
+    font-size: @body_font_size+2;
+    padding: 0;
+    .border-radius(3px);
+    .box-shadow(inset 1px 1px 2px rgba(0,0,0,.07));
+}
+textarea {
+    height: @baseline*8; 
+    width: @baseline*20;
+    font-size: @body_font_size+2;
+    line-height: @baseline;
+}
+fieldset.radio {
+    margin-bottom: @baseline;
+}
+    fieldset.radio fieldset {
+        margin: 0 0 0 @baseline;
+    }
+        fieldset.radio fieldset label input {
+            display: inline;
+            line-height: @baseline;
+            margin: 0;
+            vertical-align: baseline;
+        }
+label.error {
+    width: @baseline*20;
+    text-align: right;
+    color: #aa0000;
+}
+label.error:before {
+    content: "▲ ";
+}
+input.error, textarea.error {
+    border-color: #aa0000;
+}
